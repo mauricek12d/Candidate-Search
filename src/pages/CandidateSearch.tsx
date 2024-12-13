@@ -12,7 +12,7 @@ interface Candidate {
   company: string;
 }
 const CandidateSearch = () => {
-  const [search, setSearch] = useState('');
+  const [search] = useState('');
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
@@ -101,12 +101,6 @@ const CandidateSearch = () => {
     <div>
       <h1>Candidate Search</h1>
       <div>
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search for candidates"
-        />
         <button onClick={fetchCandidates} disabled={loading}>
           {loading ? 'Searching...' : 'Search'}
         </button>
