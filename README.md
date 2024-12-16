@@ -1,33 +1,41 @@
-# React + TypeScript + Vite
+# Candidate Search App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-* Configure the top-level `parserOptions` property as follows:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+The Candidate Search App is a React + TypeScript application built with Vite. It allows users to search for GitHub profiles, save candidates for future reference, and manage a list of saved candidates. This guide provides setup instructions, features, and guidelines for contributors.
 
 ---
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+
+## 🚀 Features
+
+- **GitHub Profile Search:** Search GitHub users by username.
+- **Save Candidates:** Save selected profiles for future reference.
+- **Manage Saved Candidates:** View and remove saved candidates.
+- **Built with TypeScript:** Type-safe, scalable, and maintainable codebase.
+- **Fast Development with Vite:** Instant reloads and optimized builds.
+
+---
+
+## 🛠️ Technologies Used
+
+- **React** for building the user interface.
+- **TypeScript** for type-safe development.
+- **Vite** for a fast development server and bundler.
+- **GitHub API** for fetching user data.
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+Ensure you have the following installed:
+- **Node.js** (version 16+)
+- **npm** (version 7+)
+
+---
+
+### Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/candidate-search-app.git
+   cd candidate-search-app
