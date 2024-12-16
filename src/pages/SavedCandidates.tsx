@@ -14,14 +14,12 @@ const SavedCandidates = () => {
 
   const [savedCandidates, setSavedCandidates] = useState<Candidate[]>([]);
 
-  console.log('Loaded to localStorage', savedCandidates);
-
   useEffect(() => {
     // Load saved candidates from localStorage when the component mounts
     try {
-    const candidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
+      const candidates = JSON.parse(localStorage.getItem('savedCandidates') || '[]');
       if (!Array.isArray(candidates)) throw new Error('Invalid data in localStorage');
-    setSavedCandidates(candidates);
+      setSavedCandidates(candidates);
     } catch (error) {
       console.error('Failed to load saved candidates:', error);
       setSavedCandidates([]); // Reset to an empty array if there was an error
@@ -39,11 +37,20 @@ const SavedCandidates = () => {
     <div>
       <h1>Saved Candidates</h1>
       {savedCandidates.length > 0 ? (
-        <ul>
+        <ul style={{ listStyle: 'none', padding: 0 }}>
           {savedCandidates.map((candidate) => (
-
-          return (
-            <li key={candidate.id}>
+            <li
+              key={candidate.id}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '15px',
+                marginBottom: '20px',
+                padding: '10px',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+              }}
+            >
               <img
                 src={candidate.avatar_url}
                 alt={candidate.name || candidate.username}
@@ -52,16 +59,33 @@ const SavedCandidates = () => {
                   (e.target as HTMLImageElement).src = 'https://via.placeholder.com/50';
                 }}
               />
-              <div>
-                <p><strong>Name:</strong> {candidate.name}</p>
-                <p><strong>Username:</strong> {candidate.username}</p>
-                <p><strong>Location:</strong> {candidate.location}</p>
-                <p><strong>Github URL:</strong> candidate.html_url}</p>
+              <div style={{ flex: 1 }}>
+                <p>
+                  <strong>Name:</strong> {candidate.name}
+                </p>
+                <p>
+                  <strong>Username:</strong> {candidate.username}
+                </p>
+                <p>
+                  <strong>Location:</strong> {candidate.location}
+                </p>
                 <a href={candidate.html_url} target="_blank" rel="noopener noreferrer">
                   View GitHub Profile
                 </a>
               </div>
-              <button onClick={() => removeCandidate(candidate.id)}>Remove</button>
+              <button
+                onClick={() => removeCandidate(candidate.id)}
+                style={{
+                  backgroundColor: '#ff4d4d',
+                  color: 'white',
+                  border: 'none',
+                  padding: '5px 10px',
+                  borderRadius: '5px',
+                  cursor: 'pointer',
+                }}
+              >
+                Remove
+              </button>
             </li>
           ))}
         </ul>
@@ -73,3 +97,4 @@ const SavedCandidates = () => {
 };
 
 export default SavedCandidates;
+
