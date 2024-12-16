@@ -6,7 +6,7 @@ interface Candidate {
   name: string;
   username: string;
   location: string;
-  avatar: string;
+  avatar_url: string;
   email: string;
   html_url: string;
   company: string;
@@ -66,17 +66,19 @@ const CandidateSearch = () => {
     if (currentCandidate) {
       alert(`${currentCandidate.name} has been saved.`);
 
-      const candidatetoSave = { 
+      const candidatetoSave: Candidate = { 
         id: currentCandidate.id,
         name: currentCandidate.name,
         username: currentCandidate.username,
         location: currentCandidate.location,
-        avatar: currentCandidate.avatar,
-        email: currentCandidate.email || 'N/A',
+        avatar_url: currentCandidate.avatar_url,
         html_url: currentCandidate.html_url,
-        company: currentCandidate.company || 'N/A',
+        email: currentCandidate.email || '',
+        company: currentCandidate.company || '',
       };
 
+      console.log('Saved to localStorage', candidatetoSave);
+      
       const updatedSavedCandidates = [...savedCandidates, candidatetoSave];
 
       setSavedCandidates(updatedSavedCandidates);
@@ -115,12 +117,13 @@ const CandidateSearch = () => {
           <img
             src={user.avatar_url}
             alt={user.login}
-            style={styles.avatar}
+            style={styles.avatar_url}
           />
           <p><strong>Name:</strong> {user.name || 'N/A'}</p>
           <p><strong>Location:</strong> {user.location || 'N/A'}</p>
           <p><strong>Company:</strong> {user.company || 'N/A'}</p>
           <p><strong>Email:</strong> {user.email || 'N/A'}</p>
+          <p><strong>Username:</strong> {user.login}</p>
           <a href={user.html_url} target="_blank" rel="noopener noreferrer">
             View GitHub Profile
           </a>
@@ -145,7 +148,7 @@ const styles = {
     border: '1px solid #ddd',
     borderRadius: '8px',
   },
-  avatar: {
+  avatar_url: {
     width: '100px',
     height: '100px',
     borderRadius: '50%',
