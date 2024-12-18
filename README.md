@@ -42,7 +42,6 @@ Ensure you have the following installed:
    Add a GitHub Fine-Grained Personal Access Token
 
 2. **Navigate to GitHub Settings.
-   ```bash
 
 Under "Personal Access Tokens," click "Generate new token".
 
@@ -54,6 +53,7 @@ Copy the generated token.
 
 Create a .env file in the root directory and add the following line:
 
+```bash
 VITE_GITHUB_TOKEN=your_fine_grained_token_here
 
 
