@@ -37,5 +37,22 @@ Ensure you have the following installed:
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/candidate-search-app.git
-   cd candidate-search-app
+   git clone https://github.com/mauricek12d/Candidate-Search
+
+   Add a GitHub Fine-Grained Personal Access Token
+
+2. Navigate to GitHub Settings.
+
+Under "Personal Access Tokens," click "Generate new token".
+
+Select "Fine-grained personal access token".
+
+Configure the required permissions for accessing user profiles.
+
+Copy the generated token.
+
+Create a .env file in the root directory and add the following line:
+
+VITE_GITHUB_TOKEN=your_fine_grained_token_here
+
+
