@@ -41,7 +41,8 @@ Ensure you have the following installed:
 
    Add a GitHub Fine-Grained Personal Access Token
 
-2. Navigate to GitHub Settings.
+2. **Navigate to GitHub Settings.
+   ```bash
 
 Under "Personal Access Tokens," click "Generate new token".
 
